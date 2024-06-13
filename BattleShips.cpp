@@ -4,6 +4,8 @@
 #include <algorithm>
 #include <memory>
 #include <fstream>
+#include <iterator>
+
 #include "Ship.h"
 
 template <class T>
