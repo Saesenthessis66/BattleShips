@@ -17,4 +17,5 @@ add_executable(BattleShips
         States/StateMenu.hpp
         Source/PromptSingleton.cpp
         Source/PromptSingleton.hpp
+        Engine/TextFormatter.hpp
 )
