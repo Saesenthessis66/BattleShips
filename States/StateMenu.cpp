@@ -7,7 +7,6 @@
 void StateMenu::OnEnter()
 {
     State<States>::OnEnter();
-    std::cout<<"HELLO!";
 }
 
 void StateMenu::OnUpdate()

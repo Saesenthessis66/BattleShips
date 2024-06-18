@@ -6,17 +6,18 @@
 #define STATEMENU_HPP
 
 #include <iostream>
+#include <vector>
 #include "StatesConf.hpp"
 #include "../Engine/StateMachine.hpp"
 #include "../Engine/State.hpp"
 #include "../Source/PromptSingleton.hpp"
-#include <vector>
+#include "..//Engine/TextFormatter.hpp"
 
 class StateMenu : public State<States>{
-   // PromptSingleton* prompt = PromptSingleton::GetInstance();
+    PromptSingleton* prompt = PromptSingleton::GetInstance();
     std::vector<std::string> dict = {
         "continue",
-        "new game",
+        "new game"
 };
 public:
     explicit StateMenu(FiniteStateMachine<States>& fsm)
