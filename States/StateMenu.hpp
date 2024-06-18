@@ -14,7 +14,7 @@
 #include "..//Engine/TextFormatter.hpp"
 
 class StateMenu : public State<States>{
-    PromptSingleton* prompt = PromptSingleton::GetInstance();
+    PromptSingleton* prompt = PromptSingleton::getInstance();
     std::vector<std::string> dict = {
         "continue",
         "new game"
@@ -24,9 +24,9 @@ public:
 
     : State<States>(fsm, States::MENU, "MENU"){}
 
-    void OnEnter() override;
-    void OnUpdate() override;
-    void OnExit() override;
+    void onEnter() override;
+    void onUpdate() override;
+    void onExit() override;
 };
 
 

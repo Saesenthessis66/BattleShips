@@ -5,7 +5,7 @@
 #include "PromptSingleton.hpp"
 #include <utility>
 
-std::string GetMatch(std::string &text, std::vector<std::string> dict) {
+std::string getMatch(std::string &text, std::vector<std::string> dict) {
     bool nEqual = false;
     int len = dict.size();
     for (int i = 0; i < len; i++) {
@@ -27,11 +27,11 @@ std::string GetMatch(std::string &text, std::vector<std::string> dict) {
     return text;
 }
 
-void PromptSingleton::SetValues(std::string &val) {
+void PromptSingleton::setValues(std::string &val) {
     this->prompt = val;
 }
 
-PromptSingleton *PromptSingleton::GetInstance() {
+PromptSingleton *PromptSingleton::getInstance() {
     if (instancePtr == nullptr)
     {
         instancePtr = new PromptSingleton();
@@ -43,13 +43,13 @@ PromptSingleton *PromptSingleton::GetInstance() {
     }
 }
 
-void PromptSingleton::GetPrompt() {
+void PromptSingleton::getPrompt() {
     std::getline(std::cin, prompt);
 }
 
-void PromptSingleton::GetPromptAuto(std::vector<std::string> dict) {
+void PromptSingleton::getPromptAuto(std::vector<std::string> dict) {
     std::getline(std::cin, prompt);
-    std::string t1 = this->RetValues();
-    std::string temp = GetMatch(t1, std::move(dict));
-    this->SetValues(temp);
+    std::string t1 = this->retValues();
+    std::string temp = getMatch(t1, std::move(dict));
+    this->setValues(temp);
 }

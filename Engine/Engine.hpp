@@ -8,7 +8,8 @@
 #include "..//Engine/StateMachine.hpp"
 #include "..//States/StatesWrapper.hpp"
 
-class Engine {
+class Engine
+{
     std::unique_ptr<FiniteStateMachine<States>> fsm = nullptr;
 public:
     Engine();

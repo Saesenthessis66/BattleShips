@@ -10,10 +10,10 @@ Engine::Engine()
 
     State<States>& menuState = fsm->Add<StateMenu>(States::MENU);
 
-    fsm->SetCurrentState(States::MENU);
+    fsm->setCurrentState(States::MENU);
 }
 
 void Engine::run()
 {
-    fsm->OnUpdate();
+    fsm->onUpdate();
 }

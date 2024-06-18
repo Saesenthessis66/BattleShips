@@ -58,7 +58,7 @@ namespace TextFunctions{
     {
         return SetConsoleCursorPosition(cmd::hOutput, {x, y});
     }
-    static COORD GetConsoleCursorPosition(HANDLE hConsoleOutput)
+    static COORD getConsoleCursorPosition(HANDLE hConsoleOutput)
     {
         CONSOLE_SCREEN_BUFFER_INFO cbsi;
         if (GetConsoleScreenBufferInfo(hConsoleOutput, &cbsi))

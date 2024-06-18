@@ -17,15 +17,15 @@ private:
 public:
     PromptSingleton(const PromptSingleton& obj) = delete;
 
-    static PromptSingleton* GetInstance();
+    static PromptSingleton* getInstance();
 
-    void SetValues(std::string& val);
+    void setValues(std::string& val);
 
-    std::string RetValues(){ return prompt; }
+    std::string retValues(){ return prompt; }
 
-    void GetPrompt();
+    void getPrompt();
 
-    void GetPromptAuto(std::vector<std::string> dict);
+    void getPromptAuto(std::vector<std::string> dict);
 };
 
 #endif //PROMPTSINGLETON_HPP

@@ -4,17 +4,17 @@
 
 #include "StateMenu.hpp"
 
-void StateMenu::OnEnter()
+void StateMenu::onEnter()
 {
-    State<States>::OnEnter();
+    State<States>::onEnter();
 }
 
-void StateMenu::OnUpdate()
+void StateMenu::onUpdate()
 {
-    State<States>::OnUpdate();
+    State<States>::onUpdate();
 }
 
-void StateMenu::OnExit()
+void StateMenu::onExit()
 {
-    State<States>::OnExit();
+    State<States>::onExit();
 }

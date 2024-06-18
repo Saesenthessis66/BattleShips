@@ -21,7 +21,7 @@ public:
         return mID;
     }
 
-    inline const std::string& GetName() const
+    inline const std::string& getName() const
     {
         return mName;
     }
@@ -36,15 +36,15 @@ public:
 
     virtual ~State() {}
 
-    virtual void OnEnter()
+    virtual void onEnter()
     {
     }
 
-    virtual void OnExit()
+    virtual void onExit()
     {
     }
 
-    virtual void OnUpdate()
+    virtual void onUpdate()
     {
     }
 protected:

@@ -29,39 +29,39 @@ public:
         return *mStates[id];
     }
 
-    State<T>& GetState(T stateID)
+    State<T>& getState(T stateID)
     {
         return *mStates[stateID];
     }
 
-    State<T>& GetCurrentState()
+    State<T>& getCurrentState()
     {
         return *mCurrentState;
     }
 
 
-    const State<T>& GetCurrentState() const
+    const State<T>& getCurrentState() const
     {
         return *mCurrentState;
     }
 
 
-    void SetCurrentState(T stateID)
+    void setCurrentState(T stateID)
     {
-        State<T>* state = &GetState(stateID);
-        SetCurrentState(state);
+        State<T>* state = &getState(stateID);
+        setCurrentState(state);
     }
 
-    void OnUpdate()
+    void onUpdate()
     {
         if (mCurrentState != nullptr)
         {
-            mCurrentState->OnUpdate();
+            mCurrentState->onUpdate();
         }
     }
 protected:
 
-    void SetCurrentState(State<T>* state)
+    void setCurrentState(State<T>* state)
     {
         if (mCurrentState == state)
         {
@@ -69,12 +69,12 @@ protected:
         }
         if (mCurrentState != nullptr)
         {
-            mCurrentState->OnExit();
+            mCurrentState->onExit();
         }
         mCurrentState = state;
         if (mCurrentState != nullptr)
         {
-            mCurrentState->OnEnter();
+            mCurrentState->onEnter();
         }
     }
 };
