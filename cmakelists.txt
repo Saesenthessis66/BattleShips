@@ -2,10 +2,19 @@ cmake_minimum_required(VERSION 3.14)
 
 project(BattleShips LANGUAGES CXX)
 
-add_executable(qtTest
+add_executable(BattleShips
         Source/BattleShips.cpp
         Source/Ship.h
         Engine/Engine.cpp
         Engine/Engine.hpp
         Source/Main.cpp
+        Source/Globals.hpp
+        Engine/StateMachine.hpp
+        Engine/State.hpp
+        States/StatesWrapper.hpp
+        States/StatesConf.hpp
+        States/StateMenu.cpp
+        States/StateMenu.hpp
+        Source/PromptSingleton.cpp
+        Source/PromptSingleton.hpp
 )
