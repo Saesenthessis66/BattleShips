@@ -15,10 +15,7 @@
 
 class StateMenu : public State<States>{
     PromptSingleton* prompt = PromptSingleton::getInstance();
-    std::vector<std::string> dict = {
-        "continue",
-        "new game"
-};
+
 public:
     explicit StateMenu(FiniteStateMachine<States>& fsm)
 
