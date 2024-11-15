@@ -1,6 +1,3 @@
-//
-// Created by lucja on 18.06.2024.
-//
 
 #ifndef TEXTFORMATTER_HPP
 #define TEXTFORMATTER_HPP
@@ -52,6 +49,13 @@ namespace TextFunctions{
     static void print(std::string& message)
     {
         std::cout<<message<<std::endl;
+    }
+
+    static void printWithColor(std::string& message, int color)
+    {
+        SetConsoleTextAttribute(cmd::hOutput, color);
+        std::cout<<message<<std::endl;
+        SetConsoleTextAttribute(cmd::hOutput, TextColors::WHITE);
     }
 
     static bool setCursor(short x, short y)
