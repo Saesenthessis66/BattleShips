@@ -1,7 +1,3 @@
-//
-// Created by lucja on 18.06.2024.
-//
-
 #include "PromptSingleton.hpp"
 #include <utility>
 
@@ -31,16 +27,12 @@ void PromptSingleton::setValues(std::string &val) {
     this->prompt = val;
 }
 
-PromptSingleton *PromptSingleton::getInstance() {
+std::unique_ptr<PromptSingleton>& PromptSingleton::getInstance() {
     if (instancePtr == nullptr)
     {
-        instancePtr = new PromptSingleton();
-        return instancePtr;
+        instancePtr = std::unique_ptr<PromptSingleton>(new PromptSingleton());
     }
-    else
-    {
-        return instancePtr;
-    }
+    return instancePtr; 
 }
 
 void PromptSingleton::getPrompt() {

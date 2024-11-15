@@ -1,6 +1,3 @@
-//
-// Created by lucja on 18.06.2024.
-//
 
 #ifndef STATEMENU_HPP
 #define STATEMENU_HPP
@@ -14,7 +11,7 @@
 #include "..//Engine/TextFormatter.hpp"
 
 class StateMenu : public State<States>{
-    PromptSingleton* prompt = PromptSingleton::getInstance();
+    std::unique_ptr<PromptSingleton> prompt = std::move(PromptSingleton::getInstance());
 
 public:
     explicit StateMenu(FiniteStateMachine<States>& fsm)

@@ -1,23 +1,20 @@
-//
-// Created by lucja on 18.06.2024.
-//
-
 #ifndef PROMPTSINGLETON_HPP
 #define PROMPTSINGLETON_HPP
 
 #include <string>
 #include <iostream>
 #include <vector>
+#include <memory>
 
 class PromptSingleton{
 private:
     std::string prompt;
-    static PromptSingleton* instancePtr;
+    static std::unique_ptr<PromptSingleton> instancePtr;
     PromptSingleton()= default;
 public:
     PromptSingleton(const PromptSingleton& obj) = delete;
 
-    static PromptSingleton* getInstance();
+    static std::unique_ptr<PromptSingleton>& getInstance();
 
     void setValues(std::string& val);
 
