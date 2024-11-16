@@ -19,4 +19,5 @@ add_executable(BattleShips
         Source/PromptSingleton.hpp
         Engine/TextFormatter.hpp
         Engine/Texts.hpp
+        Source/List.hpp
 )

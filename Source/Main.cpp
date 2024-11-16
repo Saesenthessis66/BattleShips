@@ -4,100 +4,47 @@
 
 std::unique_ptr<PromptSingleton> PromptSingleton::instancePtr = nullptr;
 
-template <class T>
-class ListElement
-{
-public:
-	ListElement* Next;
-	ListElement* Previous;
-	T* Data;
-
-
-	ListElement(T* value, ListElement* previous = nullptr, ListElement* next = nullptr)
-		:Data(value), Previous(previous), Next(next) {}
-};
-
-template <class T>
-class List
-{
-	ListElement<T>* Head;
-	int size = 0;
-
-public:
-	List() :Head(nullptr) {}
-	~List() { clear(); }
-
-	ListElement<T>* getHead() { return Head; }
-
-	void clear() {
-		ListElement<T>* Current = Head;
-		while (Current != nullptr)
-		{
-			ListElement<T>* temp = Current->Next;
-			delete Current->Data;
-			delete Current;
-			Current = temp;
-		}
-
-		Head = nullptr;
-	}
-	void pushBack(T* value) {
-		if (Head == nullptr)
-		{
-			Head = new ListElement<T>(value);
-			size++;
-		}
-		else
-		{
-			ListElement<T>* Current = Head;
-			while (Current->Next != nullptr)
-			{
-				Current = Current->Next;
-			}
-
-			ListElement<T>* Temp = new ListElement<T>(value, Current);
-			Current->Next = Temp;
-			size++;
-		}
-	}
-	void popBack() {
-		if (Head == nullptr)
-		{
-			throw ("Empty list cannot be poped");
-		}
-
-		if (Head->Next == nullptr)
-		{
-			delete Head;
-			Head = nullptr;
-			size--;
-		}
-		else
-		{
-			ListElement<T>* Current = Head;
-			while (Current->Next != nullptr)
-			{
-				Current = Current->Next;
-			}
-			Current->Previous->Next = nullptr;
-			delete Current;
-			size--;
-		}
-	}
-	int Size() { return size; };
-
-};
+#include"List.hpp"
 
 #include "../Engine/Texts.hpp"
 
 int main()
 {
-    Engine engine = Engine();
 
-    while(1)
-    {
-        engine.run();
-    }
+	List<int> l;
+	int x,y;
+	x=2;y=3;
+
+	l.pushBack(x);l.pushBack(x);
+		l.popBack();
+	std::cin>>x;
+	// std::shared_ptr<int> x,y;
+	// *x= 2;
+	// *y= 2;
+
+	// l.pushBack(x);
+	// l.pushBack(y);
+
+	// std::shared_ptr<ListElement<int>> e = l.getHead();
+	// auto current = l.getHead();	
+	// int s = l.Size();
+	// for(int i =0;i<s;i++)
+	// {
+	// 	std::cout<<current->data<<std::endl;
+	// 	if(current->next != nullptr)current = current->next;
+	// }
+	// for(int i = s; i>0;i--)
+	// {
+	// 	std::cout<<current->data<<std::endl;
+	// 	current = current->previous;
+	// }
+
+    // Engine engine = Engine();
+
+    // while(1)
+    // {
+    //     engine.run();
+    // }
 
     return 0;
 }
