@@ -4,7 +4,7 @@ project(BattleShips LANGUAGES CXX)
 
 add_executable(BattleShips
         Source/BattleShips.cpp
-        Source/Ship.h
+        Source/Ship.hpp
         Engine/Engine.cpp
         Engine/Engine.hpp
         Source/Main.cpp
