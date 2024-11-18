@@ -1,3 +1,8 @@
+#ifndef LIST_HPP
+#define LIST_HPP
+
+#include <memory>
+
 template <typename T>
 struct ListElement {
     T data; 
@@ -66,3 +71,5 @@ public:
 
 
 };
+
+#endif

@@ -1,4 +1,3 @@
-
 #ifndef STATEMENU_HPP
 #define STATEMENU_HPP
 
@@ -23,5 +22,4 @@ public:
     void onExit() override;
 };
 
-
-#endif //STATEMENU_HPP
+#endif

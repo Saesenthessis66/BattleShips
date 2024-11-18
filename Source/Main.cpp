@@ -1,43 +1,26 @@
 
 #include "..//Engine/Engine.hpp"
-#include "..//Engine/TextFormatter.hpp"
+
+#include <iostream>
+#include <cstdlib>
 
 std::unique_ptr<PromptSingleton> PromptSingleton::instancePtr = nullptr;
 
-#include"List.hpp"
-
-#include "../Engine/Texts.hpp"
-
 int main()
 {
+    auto p = std::move(PromptSingleton::getInstance());
 
-	List<int> l;
-	int x,y;
-	x=2;y=3;
+	int x = 0;
+	int xpp;
+	while(1)
+	{
+		std::cout<<std::endl<<x;
+		xpp = p->getPressedKey();
+		if(xpp == cmd::KeyPressed::RIGHT) x++;
+		if(xpp == cmd::KeyPressed::LEFT) x--;
 
-	l.pushBack(x);l.pushBack(x);
-		l.popBack();
-	std::cin>>x;
-	// std::shared_ptr<int> x,y;
-	// *x= 2;
-	// *y= 2;
-
-	// l.pushBack(x);
-	// l.pushBack(y);
-
-	// std::shared_ptr<ListElement<int>> e = l.getHead();
-	// auto current = l.getHead();	
-	// int s = l.Size();
-	// for(int i =0;i<s;i++)
-	// {
-	// 	std::cout<<current->data<<std::endl;
-	// 	if(current->next != nullptr)current = current->next;
-	// }
-	// for(int i = s; i>0;i--)
-	// {
-	// 	std::cout<<current->data<<std::endl;
-	// 	current = current->previous;
-	// }
+		system("cls");
+	}
 
     // Engine engine = Engine();
 

@@ -1,4 +1,5 @@
 #include "PromptSingleton.hpp"
+#include "Globals.hpp"
 #include <utility>
 
 std::string getMatch(std::string &text, std::vector<std::string> dict) {
@@ -44,4 +45,45 @@ void PromptSingleton::getPromptAuto(std::vector<std::string> dict) {
     std::string t1 = this->retValues();
     std::string temp = getMatch(t1, std::move(dict));
     this->setValues(temp);
+}
+
+int PromptSingleton::getPressedKey() {
+
+    DWORD NumInputs = 0;
+    DWORD InputsRead = 0;
+    bool running = true;
+
+    INPUT_RECORD irInput;
+
+    GetNumberOfConsoleInputEvents(cmd::hInput, &NumInputs);
+
+    ReadConsoleInput(cmd::hInput, &irInput, 1, &InputsRead);
+
+    if (irInput.EventType == KEY_EVENT && irInput.Event.KeyEvent.bKeyDown)
+    {
+        switch(irInput.Event.KeyEvent.wVirtualKeyCode)
+        {
+            case VK_RETURN:
+            return cmd::KeyPressed::ACCEPT;
+
+            case VK_ESCAPE:
+            return cmd::KeyPressed::BACK;
+
+            case VK_R_KEY:
+            return cmd::KeyPressed::ROTATE;
+
+            case VK_UP:
+            return cmd::KeyPressed::UP;
+
+            case VK_DOWN:
+            return cmd::KeyPressed::DOWN;
+
+            case VK_RIGHT:
+            return cmd::KeyPressed::RIGHT;
+
+            case VK_LEFT:
+            return cmd::KeyPressed::LEFT;
+        } 
+    }
+    return -1;
 }

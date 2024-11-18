@@ -1,7 +1,3 @@
-//
-// Created by lucja on 18.06.2024.
-//
-
 #ifndef STATE_HPP
 #define STATE_HPP
 

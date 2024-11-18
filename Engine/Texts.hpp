@@ -1,3 +1,5 @@
+#ifndef TEXT_HPP
+#define TEXT_HPP
 
 #include <string>
 
@@ -10,4 +12,6 @@ static std::string ship =  "                     __/___            \n"
                            "     \\              < < <       |      ";
 
 static std::string water =  " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ";
-}                          
+}   
+
+#endif

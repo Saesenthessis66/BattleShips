@@ -23,6 +23,8 @@ public:
     void getPrompt();
 
     void getPromptAuto(std::vector<std::string> dict);
+
+    int getPressedKey();
 };
 
-#endif //PROMPTSINGLETON_HPP
+#endif

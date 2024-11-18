@@ -1,4 +1,3 @@
-
 #ifndef TEXTFORMATTER_HPP
 #define TEXTFORMATTER_HPP
 

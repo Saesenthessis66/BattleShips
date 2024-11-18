@@ -12,8 +12,8 @@
 class Map
 {
 	int maxShips;
-	List <Ship> ships;
-	std::vector<std::vector<std::string>> tiles;
+	List <Ship> _ships;
+	std::vector<std::vector<char>> tiles;
 	bool destroyed;
 	
 	std::random_device rd;
