@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.14)
 project(BattleShips LANGUAGES CXX)
 
 add_executable(BattleShips
-        Source/BattleShips.cpp
+
         Source/Ship.hpp
         Engine/Engine.cpp
         Engine/Engine.hpp
@@ -20,4 +20,6 @@ add_executable(BattleShips
         Engine/TextFormatter.hpp
         Engine/Texts.hpp
         Source/List.hpp
+        Source/Map.hpp
+        Source/Map.cpp
 )
