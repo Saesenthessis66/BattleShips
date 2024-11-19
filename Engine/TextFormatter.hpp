@@ -53,7 +53,7 @@ namespace TextFunctions{
     static void printWithColor(std::string& message, int color)
     {
         SetConsoleTextAttribute(cmd::hOutput, color);
-        std::cout<<message<<std::endl;
+        std::cout<<message;
         SetConsoleTextAttribute(cmd::hOutput, TextColors::WHITE);
     }
 

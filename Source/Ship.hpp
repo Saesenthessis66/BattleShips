@@ -9,17 +9,13 @@ class Ship
 	bool vertical, destroyed;
 
 public:
-	Ship(int x, int y, int s, bool vert) : posX(x), posY(y), size(s), vertical(vert) { destroyed = false;}
+	Ship(int s, int x = 0, int y = 0, bool vert = false) : size(s), posX(x), posY(y), vertical(vert) { destroyed = false;}
 
-	void incrementPosX()
-	{
-		if(posX<10) posX++;
-	}
+	void rotate();
 
-	void incrementPosY()
-	{
-		if(posY<10) posY++;
-	}
+	void incrementPosX();
+
+	void incrementPosY();
 
 	void decrementPosX()
 	{
@@ -46,5 +42,9 @@ public:
 	int getVertical()
 	{
 		return vertical;
+	}
+	bool isDestroyed()
+	{
+		return destroyed;
 	}
 };

@@ -41,7 +41,7 @@
 			{
 				if(_tiles[xPos+i][yPos] == 'S') return false;
 
-				if(yPos<10)
+				if(yPos<9)
 				{
 					if(_tiles[xPos+i][yPos+1] != '.' ) return false;
 				}
@@ -57,7 +57,7 @@
 				if(_tiles[xPos-1][yPos] != '.' ) return false;
 			}
 
-			if(xPos<10)
+			if(xPos + size < 10)
 			{
 				if (_tiles[xPos+size][yPos] != '.' ) return false;
 			}
@@ -68,7 +68,7 @@
 			{
 				if(_tiles[xPos][yPos+i] == 'S') return false;
 
-				if(xPos<10)
+				if(xPos<9)
 				{
 					if(_tiles[xPos+1][yPos+i] != '.' ) return false;
 				}
@@ -84,7 +84,7 @@
 				if(_tiles[xPos][yPos-1] != '.' ) return false;
 			}
 
-			if(yPos<10)
+			if(yPos+size<10)
 			{
 				if (_tiles[xPos][yPos+size] != '.' ) return false;
 			}

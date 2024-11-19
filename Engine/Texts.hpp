@@ -3,6 +3,8 @@
 
 #include <string>
 
+static std::string emptyString = "";
+
 namespace Menu
 {
 
@@ -12,6 +14,11 @@ static std::string ship =  "                     __/___            \n"
                            "     \\              < < <       |      ";
 
 static std::string water =  " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ";
-}   
+} 
+
+namespace Board
+{
+    static std::string ship_indicator = "S ";
+}
 
 #endif
