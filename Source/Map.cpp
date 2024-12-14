@@ -27,7 +27,7 @@
 				_tiles[xPos][yPos+i] = 'S';
 			}	
 		}
-		_ships.pushBack(s);
+		_ships.push_back(s);
 	}
 
 	bool Map::canPlaceShip(Ship& s)

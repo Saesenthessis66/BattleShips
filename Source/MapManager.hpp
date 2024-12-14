@@ -2,29 +2,35 @@
 #define MAPMANAGER_HPP
 
 #include "Map.hpp"
+#include "List.hpp"
+#include <memory>
+#include <vector>
 
 class MapManager
 {
-    public:
     Map _map;
     std::shared_ptr<std::array<std::array<char, 10>, 10>> _tiles;
+    std::vector<int> _sizes;
 
-
-
-    MapManager()
-    {
-        _map = Map();
-        _tiles = std::shared_ptr<std::array<std::array<char, 10>, 10>>(&_map.getTiles(), 
-                [](std::array<std::array<char, 10>, 10>*) {
-});
-
-    }
+    bool placeShip(Ship& s, int command);
 
     void showMap();
 
     void showMap(Ship& s);
 
-    bool placeShip(Ship& s, int command);
+public:
+
+    MapManager()
+    {
+        _map = Map();
+        _tiles = std::shared_ptr<std::array<std::array<char, 10>, 10>>(&_map.getTiles(), 
+                [](std::array<std::array<char, 10>, 10>*) {});
+        _sizes = std::vector<int>(6,0);
+    }
+
+    void getShipList();
+
+    void placeShips();
 };
 
 #endif

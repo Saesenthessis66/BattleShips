@@ -1,6 +1,7 @@
 #include "MapManager.hpp"
 #include "../Engine/TextFormatter.hpp"
 #include "../Engine/Texts.hpp"
+#include "PromptSingleton.hpp"
 
 bool MapManager::placeShip(Ship& s, int command)
 {
@@ -84,6 +85,33 @@ void MapManager::showMap(Ship& s)
                 else std::cout<<(*_tiles)[i][j]<<" ";
             }
             std::cout<<std::endl;
+        }
+    }
+}
+
+void MapManager::getShipList()
+{
+    _sizes[1] = 3;
+    _sizes[2] = 2;
+    _sizes[3] = 1;
+}
+
+void MapManager::placeShips()
+{
+    
+    auto p = std::move(PromptSingleton::getInstance());
+    for(int i = 1; i < 6; i++)
+    {
+        for(int j = _sizes[i]; j > 0; j--)
+        {
+            int command = 0;
+            Ship s(i);
+            showMap(s);	
+            do
+            {
+        	    command = p->getPressedKey();
+        	    system("cls");
+            } while(!placeShip(s,command));
         }
     }
 }

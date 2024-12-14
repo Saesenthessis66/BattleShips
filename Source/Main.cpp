@@ -9,26 +9,9 @@ std::unique_ptr<PromptSingleton> PromptSingleton::instancePtr = nullptr;
 int main()
 {
 	MapManager m;
-	Ship s(3);
-	Ship ss(4);
-    auto p = std::move(PromptSingleton::getInstance());
+	m.getShipList();
+	m.placeShips();
 
-	int x = 0;
-	int xpp = 0;
-	m.showMap(s);
-	do
-	{	
-		xpp = p->getPressedKey();
-		system("cls");
-	} while(!m.placeShip(s,xpp));
-
-		m.showMap();
-	do
-	{	
-		xpp = p->getPressedKey();
-		system("cls");
-	} while(!m.placeShip(ss,xpp));
-	m.showMap();
     // Engine engine = Engine();
 
     // while(1)
